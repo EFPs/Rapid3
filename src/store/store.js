@@ -8,7 +8,10 @@ export default new Vuex.Store({
     splitter: {
       namespaced: true,
       state: {
-        open: false
+        open: false,
+        user: null,
+        error: null,
+        loading: false
       },
       mutations: {
         toggle (state, shouldOpen) {
@@ -17,6 +20,15 @@ export default new Vuex.Store({
           } else {
             state.open = !state.open
           }
+        },
+        setUser (state, payload) {
+          state.user = payload
+        },
+        setError (state, payload) {
+          state.error = payload
+        },
+        setLoading (state, payload) {
+          state.loading = payload
         }
       }
     }
