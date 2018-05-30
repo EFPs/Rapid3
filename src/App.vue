@@ -1,25 +1,25 @@
-<template>
-  <v-ons-page id="app">
-    <v-ons-splitter>
-      <v-ons-splitter-side swipeable collapse width="250px"
-        :animation="$ons.platform.isAndroid() ? 'overlay' : 'reveal'"
-        :open.sync="menuIsOpen">
-        <menu-page></menu-page>
-      </v-ons-splitter-side>
-
-      <v-ons-splitter-content>
-        <home-page></home-page>
-      </v-ons-splitter-content>
-    </v-ons-splitter>
-  </v-ons-page>
+<template id="">
+  <f7-page>
+    HEYYy
+  </f7-page>
 </template>
 
 <script>
-import HomePage from './components/HomePage'
-import MenuPage from './components/MenuPage'
+// import HomePage from './components/HomePage'
+// import MenuPage from './components/MenuPage'
+import F7Page from 'framework7-vue/src/components/page'
 
 export default {
   name: 'app',
+  data () {
+    return {
+    }
+  },
+  methods: {
+    md () {
+      return this.$ons.platform.isAndroid()
+    }
+  },
   computed: {
     menuIsOpen: {
       get () {
@@ -31,8 +31,9 @@ export default {
     }
   },
   components: {
-    HomePage,
-    MenuPage
+    F7Page
+    // HomePage,
+    // MenuPage
   }
 }
 </script>
